@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_navigation"
+    app:startDestination="@id/passBinFragment">
+    <fragment
+        android:id="@+id/passBinFragment"
+        android:name="ru.bin.presentation.fragment.PassBinFragment"
+        android:label="fragment_pass_bin"
+        tools:layout="@layout/fragment_pass_bin" >
+        <action
+            android:id="@+id/action_passBinFragment_to_informationFragment"
+            app:destination="@id/bankInformationFragment"
+            app:popUpTo="@id/passBinFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_passBinFragment_to_storedBinNumbersFragmentFragment"
+            app:destination="@id/storedBinNumbersFragmentFragment"
+            app:popUpTo="@id/passBinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bankInformationFragment"
+        android:name="ru.bin.presentation.fragment.BankInformationFragment"
+        android:label="fragment_bank_information"
+        tools:layout="@layout/fragment_bank_information" >
+        <argument
+            android:name="binNumber"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/storedBinNumbersFragmentFragment"
+        android:name="ru.bin.presentation.fragment.StoredBinNumbersFragment"
+        android:label="fragment_stored_bin_numbers"
+        tools:layout="@layout/fragment_stored_bin_numbers" >
+        <action
+            android:id="@+id/action_storedBinNumbersFragmentFragment_to_informationFragment"
+            app:destination="@id/bankInformationFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Bin Checker</string>
+    <string name="enter_bin">Enter BIN</string>
+    <string name="bank_name">Bank Name: %s</string>
+    <string name="bank_url">Site: %s</string>
+    <string name="bank_phone">Phone: %s</string>
+    <string name="bank_city">City: %s</string>
+    <string name="bank">BANK</string>
+    <string name="country">COUNTRY</string>
+    <string name="card">CARD</string>
+    <string name="country_code">Country Code: %s</string>
+    <string name="country_name">Country: %s</string>
+    <string name="country_currency">Currency: %s</string>
+    <string name="country_latitude_longitude">Latitude and Longitude: %s | %s</string>
+    <string name="card_scheme">Card Scheme: %s</string>
+    <string name="card_type">Card Type: %s</string>
+    <string name="card_brand">Card Brand: %s</string>
+    <string name="card_prepaid">Prepaid: %s</string>
+    <string name="card_number_length">Card Number Length: %s</string>
+    <string name="card_luhn">Luhn: %s</string>
+    <string name="no_info">No info</string>
+    <string name="url_format">https://%s</string>
+    <string name="phone_format">tel:%s</string>
+    <string name="geo_format">geo:%d,%d</string>
+    <string name="bin_number_length">Введите 8 цифр для большей информации</string>
+    <string name="exception_load_info">Что-то пошло не так!!! По картам МИР нет информации(</string>
+    <string name="title_input_bin">Enter the first 8 digits of a card number (BIN/IIN)</string>
+    <string name="get_bank_info">Get Bank Info</string>
+    <string name="bin_numbers_title">Bin Numbers</string>
+    <string name="bank_info">Pass Bin</string>
+    <string name="list_bin_numbers">Bin Numbers</string>
+</resources>

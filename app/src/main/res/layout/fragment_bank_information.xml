@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/bin_number"
+            style="@style/StyleTextViewTitlePassBinFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:fontFamily="@font/archivo"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/bank_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/bank_title"
+            style="@style/StyleTextViewTitleForBankInformationFragment"
+            android:text="@string/bank"
+            app:layout_constraintBottom_toTopOf="@id/bank_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bin_number" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/bank_name"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/bank_name"
+            app:layout_constraintBottom_toTopOf="@id/bank_url"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bank_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/bank_url"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/bank_url"
+            app:layout_constraintBottom_toTopOf="@id/bank_phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bank_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/bank_phone"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/bank_phone"
+            app:layout_constraintBottom_toTopOf="@id/bank_city"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bank_url" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/bank_city"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="5dp"
+            android:text="@string/bank_city"
+            app:layout_constraintBottom_toTopOf="@id/country_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bank_phone" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/country_title"
+            style="@style/StyleTextViewTitleForBankInformationFragment"
+            android:text="@string/country"
+            app:layout_constraintBottom_toTopOf="@id/country_code"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bank_city" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/country_code"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/country_code"
+            app:layout_constraintBottom_toTopOf="@id/country_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/country_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/country_name"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/country_name"
+            app:layout_constraintBottom_toTopOf="@id/country_currency"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/country_code" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/country_currency"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/country_currency"
+            app:layout_constraintBottom_toTopOf="@id/country_latitude_longitude"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/country_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/country_latitude_longitude"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/country_latitude_longitude"
+            app:layout_constraintBottom_toTopOf="@id/card_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/country_currency" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_title"
+            style="@style/StyleTextViewTitleForBankInformationFragment"
+            android:text="@string/card"
+            app:layout_constraintBottom_toTopOf="@id/card_scheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/country_latitude_longitude" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_scheme"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/card_scheme"
+            app:layout_constraintBottom_toTopOf="@id/card_type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_type"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/card_type"
+            app:layout_constraintBottom_toTopOf="@id/card_brand"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_scheme" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_brand"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/card_brand"
+            app:layout_constraintBottom_toTopOf="@id/card_prepaid"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_type" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_prepaid"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/card_prepaid"
+            app:layout_constraintBottom_toTopOf="@id/card_number_length"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_brand" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_number_length"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/card_number_length"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_prepaid" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_luhn"
+            style="@style/StyleTextViewDetailForBankInformationFragment"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/card_luhn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_number_length" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

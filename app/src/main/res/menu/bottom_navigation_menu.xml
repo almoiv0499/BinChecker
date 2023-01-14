@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/pass_bin"
+        android:enabled="true"
+        android:icon="@drawable/ic_card_search_light"
+        android:title="@string/bank_info"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/list_bin_numbers"
+        android:enabled="true"
+        android:icon="@drawable/ic_list_light"
+        android:title="@string/list_bin_numbers"
+        app:showAsAction="ifRoom" />
+
+</menu>
