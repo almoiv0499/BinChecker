@@ -15,8 +15,8 @@
             app:popUpTo="@id/passBinFragment"
             app:popUpToInclusive="false" />
         <action
-            android:id="@+id/action_passBinFragment_to_storedBinNumbersFragmentFragment"
-            app:destination="@id/storedBinNumbersFragmentFragment"
+            android:id="@+id/action_passBinFragment_to_storedBinNumbersFragment"
+            app:destination="@id/storedBinNumbersFragment"
             app:popUpTo="@id/passBinFragment" />
     </fragment>
     <fragment
@@ -29,12 +29,12 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/storedBinNumbersFragmentFragment"
+        android:id="@+id/storedBinNumbersFragment"
         android:name="ru.bin.presentation.fragment.StoredBinNumbersFragment"
         android:label="fragment_stored_bin_numbers"
         tools:layout="@layout/fragment_stored_bin_numbers" >
         <action
-            android:id="@+id/action_storedBinNumbersFragmentFragment_to_informationFragment"
+            android:id="@+id/action_storedBinNumbersFragment_to_informationFragment"
             app:destination="@id/bankInformationFragment" />
     </fragment>
 </navigation>

@@ -5,21 +5,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ru.bin.app.MyApplication
 import ru.bin.presentation.R
-import ru.bin.presentation.adapter.BinAdapter
 import ru.bin.presentation.databinding.FragmentStoredBinNumbersBinding
-import ru.bin.presentation.viewmodel.StoredBinNumbersViewModel
-import ru.bin.presentation.viewmodelfactory.BinViewModelFactory
+import ru.bin.presentation.fragment.basefragment.BaseFragment
+import ru.bin.presentation.fragment.viewmodel.StoredBinNumbersViewModel
+import ru.bin.presentation.fragment.viewmodelfactory.BinViewModelFactory
+import ru.bin.presentation.recyclerview.adapter.BinAdapter
 import javax.inject.Inject
 
-class StoredBinNumbersFragment : Fragment() {
+class StoredBinNumbersFragment : BaseFragment<StoredBinNumbersViewModel>() {
 
     private var _binding: FragmentStoredBinNumbersBinding? = null
     private val binding get() = _binding!!
@@ -27,7 +26,7 @@ class StoredBinNumbersFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory: BinViewModelFactory
 
-    private val viewModel by lazy(LazyThreadSafetyMode.NONE) {
+    override val viewModel by lazy(LazyThreadSafetyMode.NONE) {
         ViewModelProvider(
             requireActivity(),
             viewModelFactory
@@ -64,7 +63,7 @@ class StoredBinNumbersFragment : Fragment() {
         viewModel.getListStoredBinNumbers.observe(viewLifecycleOwner) {
             storedAdapter.submitList(it)
         }
-        navigateToPassBinFragment()
+        listenerButtonNavigateToPassBinFragment()
         binDetailListener()
         deleteBinNumberBySwipe()
     }
@@ -85,9 +84,9 @@ class StoredBinNumbersFragment : Fragment() {
 
     private fun deleteBinNumberBySwipe() {
         val helper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
-                0,
-                ItemTouchHelper.RIGHT or ItemTouchHelper.LEFT
-            ) {
+            0,
+            ItemTouchHelper.RIGHT or ItemTouchHelper.LEFT
+        ) {
             override fun onMove(
                 recyclerView: RecyclerView,
                 viewHolder: RecyclerView.ViewHolder,
@@ -104,11 +103,11 @@ class StoredBinNumbersFragment : Fragment() {
         helper.attachToRecyclerView(binding.recyclerView)
     }
 
-    private fun navigateToPassBinFragment() {
+    private fun listenerButtonNavigateToPassBinFragment() {
         binding.bottomNavigationStoredBinNumbersFragment.setOnItemSelectedListener { item ->
-            when(item.itemId) {
+            when (item.itemId) {
                 R.id.pass_bin -> {
-                    findNavController().popBackStack()
+                    navigateToPassBinFragment()
                     true
                 }
                 else -> false
@@ -116,11 +115,12 @@ class StoredBinNumbersFragment : Fragment() {
         }
     }
 
-    private fun navigateToBankInformationFragment(bin: String) {
-        findNavController().navigate(
-            StoredBinNumbersFragmentDirections
-                .actionStoredBinNumbersFragmentFragmentToInformationFragment(bin)
-        )
+    private fun navigateToPassBinFragment() {
+        viewModel.navigateBackToPassBinFragment()
+    }
+
+    private fun navigateToBankInformationFragment(binNumber: String) {
+        viewModel.navigateToBankInformationFragment(binNumber)
     }
 
     override fun onDestroyView() {

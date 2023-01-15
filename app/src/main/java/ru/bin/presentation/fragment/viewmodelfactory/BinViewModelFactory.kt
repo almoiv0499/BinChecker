@@ -1,4 +1,4 @@
-package ru.bin.presentation.viewmodelfactory
+package ru.bin.presentation.fragment.viewmodelfactory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

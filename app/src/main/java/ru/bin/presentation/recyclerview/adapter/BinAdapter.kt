@@ -1,12 +1,12 @@
-package ru.bin.presentation.adapter
+package ru.bin.presentation.recyclerview.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import ru.bin.presentation.databinding.RecyclerBinNumberBinding
 import ru.bin.presentation.model.BinView
-import ru.bin.presentation.util.BinDIffUtilCallback
-import ru.bin.presentation.viewholder.BinViewHolder
+import ru.bin.presentation.recyclerview.util.BinDIffUtilCallback
+import ru.bin.presentation.recyclerview.viewholder.BinViewHolder
 
 class BinAdapter : ListAdapter<BinView, BinViewHolder>(BinDIffUtilCallback()) {
 

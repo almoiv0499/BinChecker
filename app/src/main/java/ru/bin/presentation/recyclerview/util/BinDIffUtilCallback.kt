@@ -1,4 +1,4 @@
-package ru.bin.presentation.util
+package ru.bin.presentation.recyclerview.util
 
 import androidx.recyclerview.widget.DiffUtil
 import ru.bin.presentation.model.BinView

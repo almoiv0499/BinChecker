@@ -7,10 +7,11 @@ import ru.bin.data.database.BinDao
 import ru.bin.data.database.BinDatabase
 import ru.bin.data.network.Api
 import ru.bin.data.network.RetrofitInstance
-import ru.bin.data.repository.BinRepositoryImpl
-import ru.bin.data.repository.GetBinNumbersRepository
+import ru.bin.data.repository.BinDatabaseRepositoryImpl
+import ru.bin.data.repository.BinRemoteRepositoryImpl
 import ru.bin.di.annotation.ApplicationScope
-import ru.bin.domain.repository.BinRepository
+import ru.bin.domain.repository.BinDatabaseRepository
+import ru.bin.domain.repository.BinRemoteRepository
 
 @Module
 class DataModule {
@@ -22,18 +23,16 @@ class DataModule {
     @Provides
     fun provideBinDao(
         application: Application
-    ): BinDao = BinDatabase.getInstance(application = application).binDao()
+    ): BinDao = BinDatabase.getDatabase(application = application).binDao()
 
     @Provides
-    fun provideRepository(
-        api: Api,
+    fun provideBinDatabaseRepository(
         binDao: BinDao
-    ): BinRepository =
-        BinRepositoryImpl(api = api, binDao = binDao)
+    ): BinDatabaseRepository = BinDatabaseRepositoryImpl(binDao = binDao)
 
     @Provides
-    fun provideGetBinNumbersRepository(
-        binDao: BinDao
-    ): GetBinNumbersRepository = GetBinNumbersRepository(binDao = binDao)
+    fun provideBinRemoteRepository(
+        api: Api
+    ): BinRemoteRepository = BinRemoteRepositoryImpl(api = api)
 
 }

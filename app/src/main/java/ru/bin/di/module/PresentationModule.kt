@@ -5,9 +5,9 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import ru.bin.di.annotation.ViewModelKey
-import ru.bin.presentation.viewmodel.BankInformationViewModel
-import ru.bin.presentation.viewmodel.PassBinViewModel
-import ru.bin.presentation.viewmodel.StoredBinNumbersViewModel
+import ru.bin.presentation.fragment.viewmodel.BankInformationViewModel
+import ru.bin.presentation.fragment.viewmodel.PassBinViewModel
+import ru.bin.presentation.fragment.viewmodel.StoredBinNumbersViewModel
 
 @Module
 interface PresentationModule {

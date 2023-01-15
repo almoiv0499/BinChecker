@@ -7,19 +7,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import ru.bin.app.MyApplication
 import ru.bin.presentation.R
 import ru.bin.presentation.databinding.FragmentBankInformationBinding
+import ru.bin.presentation.fragment.basefragment.BaseFragment
+import ru.bin.presentation.fragment.viewmodel.BankInformationViewModel
+import ru.bin.presentation.fragment.viewmodelfactory.BinViewModelFactory
 import ru.bin.presentation.model.BinInformationView
-import ru.bin.presentation.viewmodel.BankInformationViewModel
-import ru.bin.presentation.viewmodelfactory.BinViewModelFactory
 import javax.inject.Inject
 
-class BankInformationFragment : Fragment() {
+class BankInformationFragment : BaseFragment<BankInformationViewModel>() {
 
     private var _binding: FragmentBankInformationBinding? = null
     private val binding get() = _binding!!
@@ -29,7 +28,7 @@ class BankInformationFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory: BinViewModelFactory
 
-    private val viewModel by lazy(LazyThreadSafetyMode.NONE) {
+    override val viewModel by lazy(LazyThreadSafetyMode.NONE) {
         ViewModelProvider(requireActivity(), viewModelFactory)[BankInformationViewModel::class.java]
     }
 
@@ -62,14 +61,6 @@ class BankInformationFragment : Fragment() {
             bindingCountry(requireActivity(), view)
             bindingCard(requireActivity(), view)
             chooseIntentAction(view)
-        }
-
-        viewModel.exceptionLiveData.observe(viewLifecycleOwner) {
-            Toast.makeText(
-                requireActivity(),
-                requireActivity().getString(R.string.exception_load_info),
-                Toast.LENGTH_LONG
-            ).show()
         }
     }
 
@@ -135,12 +126,6 @@ class BankInformationFragment : Fragment() {
         }
     }
 
-    private fun checkTextForNull(res: String, text: String?): String = if (text != null) {
-        String.format(res, text)
-    } else {
-        String.format(res, activity?.getString(R.string.no_info))
-    }
-
     private fun chooseIntentAction(view: BinInformationView) {
         binding.bankUrl.setOnClickListener {
             val url =
@@ -165,6 +150,12 @@ class BankInformationFragment : Fragment() {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(geo))
             startActivity(intent)
         }
+    }
+
+    private fun checkTextForNull(res: String, text: String?): String = if (text != null) {
+        String.format(res, text)
+    } else {
+        String.format(res, activity?.getString(R.string.no_info))
     }
 
     override fun onDestroyView() {

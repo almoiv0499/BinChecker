@@ -1,4 +1,4 @@
-package ru.bin.presentation.extension
+package ru.bin.presentation.model.extension
 
 import ru.bin.domain.model.BinDomain
 import ru.bin.domain.model.BinInformationDomain

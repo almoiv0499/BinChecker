@@ -1,4 +1,4 @@
-package ru.bin.presentation.viewholder
+package ru.bin.presentation.recyclerview.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
 import ru.bin.presentation.databinding.RecyclerBinNumberBinding

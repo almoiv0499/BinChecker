@@ -1,4 +1,4 @@
-package ru.bin.data.mapper
+package ru.bin.data.model.mapper
 
 import ru.bin.data.model.Bin
 import ru.bin.data.model.BinInformation
